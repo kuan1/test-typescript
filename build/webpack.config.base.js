@@ -1,9 +1,12 @@
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-const { entry } = require('./utils')
+// const { entry } = require('./utils')
+const { resolve } = require('./utils')
 
 module.exports = {
-  entry,
+  entry: {
+    index: resolve('src/index.ts')
+  },
   resolve: {
     extensions: [".ts", ".tsx", ".js"]
   },
