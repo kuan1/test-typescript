@@ -1,8 +1,9 @@
-const path = require("path")
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
+const { entry } = require('./utils')
+
 module.exports = {
+  entry,
   resolve: {
     extensions: [".ts", ".tsx", ".js"]
   },
@@ -12,9 +13,6 @@ module.exports = {
     ]
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: 'public/index.html'
-    }),
-    new CleanWebpackPlugin()
+    new CleanWebpackPlugin(),
   ]
 }
